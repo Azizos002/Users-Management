@@ -1,0 +1,251 @@
+.usertable-container {
+  background: var(--card);
+  padding: 2rem;
+  border-radius: 12px;
+  max-width: 1000px;
+  margin: 3rem auto;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+}
+
+.usertable-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.usertable-header h2 {
+  margin: 0;
+  font-size: 1.6rem;
+  color: var(--text);
+}
+
+.usertable-actions {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.search-container {
+  position: relative;
+}
+
+.search-container input {
+  padding: 0.6rem 0.8rem 0.6rem 2.2rem;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  background: var(--bg);
+  color: var(--text);
+  width: 220px;
+  transition: all 0.2s ease;
+}
+
+.search-container input:focus {
+  outline: none;
+  border-color: var(--primary);
+  width: 250px;
+}
+
+.search-icon {
+  position: absolute;
+  left: 8px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #888;
+  font-size: 0.9rem;
+}
+
+.create-button {
+  background: var(--primary);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 0.6rem 1rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-weight: 500;
+}
+
+.create-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.table-responsive {
+  overflow-x: auto;
+  margin-bottom: 1rem;
+}
+
+.usertable {
+  width: 100%;
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+.usertable th {
+  padding: 1rem 0.75rem;
+  text-align: left;
+  border-bottom: 2px solid var(--border);
+  color: var(--text);
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.usertable th:hover {
+  background-color: rgba(0, 0, 0, 0.03);
+}
+
+.usertable td {
+  padding: 0.9rem 0.75rem;
+  border-bottom: 1px solid var(--border);
+  color: var(--text);
+}
+
+.action-buttons {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.usertable .edit {
+  background: var(--primary);
+  color: white;
+  border: none;
+  border-radius: 6px;
+  padding: 0.4rem 0.8rem;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.usertable .delete {
+  background: var(--danger);
+  color: white;
+  border: none;
+  border-radius: 6px;
+  padding: 0.4rem 0.8rem;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.usertable button:hover {
+  opacity: 0.9;
+  transform: translateY(-1px);
+}
+
+.role-badge, .status-badge {
+  display: inline-block;
+  padding: 0.25rem 0.6rem;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+
+.role-badge.admin {
+  background-color: #4a90e2;
+  color: white;
+}
+
+.role-badge.editor {
+  background-color: #50b83c;
+  color: white;
+}
+
+.role-badge.viewer {
+  background-color: #9c6ade;
+  color: white;
+}
+
+.status-badge.active {
+  background-color: #e3f9e5;
+  color: #287d3c;
+}
+
+.status-badge.inactive {
+  background-color: #f8f9fa;
+  color: #6c757d;
+}
+
+.no-results {
+  text-align: center;
+  padding: 2rem;
+  color: #6c757d;
+  font-style: italic;
+}
+
+.loading {
+  text-align: center;
+  padding: 2rem;
+  color: var(--text);
+  font-style: italic;
+}
+
+.error {
+  text-align: center;
+  padding: 2rem;
+  color: var(--danger);
+  font-weight: 500;
+}
+
+.error-message {
+  background-color: rgba(231, 76, 60, 0.1);
+  border-left: 4px solid var(--danger);
+  color: var(--danger);
+  padding: 1rem;
+  margin-bottom: 1.5rem;
+  border-radius: 4px;
+}
+
+.role-badge.doctor {
+  background-color: #4a90e2;
+  color: white;
+}
+
+.role-badge.patient {
+  background-color: #50b83c;
+  color: white;
+}
+
+/* Improve responsive behavior for the table */
+@media (max-width: 992px) {
+  .usertable th:nth-child(4),
+  .usertable td:nth-child(4) {
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .usertable th:nth-child(5),
+  .usertable td:nth-child(5) {
+    display: none;
+  }
+}
+
+@media (max-width: 576px) {
+  .action-buttons {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  
+  .action-buttons button {
+    width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .usertable-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+  
+  .usertable-actions {
+    width: 100%;
+    flex-direction: column;
+  }
+  
+  .search-container, .search-container input, .create-button {
+    width: 100%;
+  }
+}
+
+

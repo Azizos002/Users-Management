@@ -1,0 +1,25 @@
+:root {
+  --bg: #ffffff;
+  --text: #111111;
+  --card: #f2f2f2;
+  --primary: #007bff;
+  --danger: #e74c3c;
+  --border: #ddd;
+}
+
+[data-theme='dark'] {
+  --bg: #181818;
+  --text: #ffffff;
+  --card: #282828;
+  --primary: #4dabf7;
+  --danger: #ff6b6b;
+  --border: #444;
+}
+
+body {
+  background-color: var(--bg);
+  color: var(--text);
+  font-family: 'Segoe UI', sans-serif;
+  margin: 0;
+  transition: background 0.3s ease, color 0.3s ease;
+}
