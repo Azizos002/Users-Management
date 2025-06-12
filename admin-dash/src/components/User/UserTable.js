@@ -25,6 +25,7 @@ export default function UserTable() {
         status: 'Active' // Default status since it's not in your Firebase model
       }));
       setUsers(usersList);
+      console.log(usersList)
       setError(null);
     } catch (err) {
       console.error("Error fetching users: ", err);
@@ -101,6 +102,9 @@ export default function UserTable() {
     user.accountType?.toLowerCase().includes(searchTerm.toLowerCase()))
   );
 
+
+  console.log("users",users)
+
   return (
     <div className="usertable-container">
       <div className="usertable-header">
@@ -132,6 +136,9 @@ export default function UserTable() {
           <table className="usertable">
             <thead>
               <tr>
+              <th onClick={() => handleSort('id')}>
+                  ID {sortConfig.key === 'id' && (sortConfig.direction === 'ascending' ? '↑' : '↓')}
+                </th>
                 <th onClick={() => handleSort('fullName')}>
                   Full Name {sortConfig.key === 'fullName' && (sortConfig.direction === 'ascending' ? '↑' : '↓')}
                 </th>
@@ -153,6 +160,7 @@ export default function UserTable() {
             <tbody>
               {filteredUsers.map((user) => (
                 <tr key={user.id}>
+                  <td>{user.id}</td>
                   <td>{user.fullName}</td>
                   <td>{user.email}</td>
                   <td>
